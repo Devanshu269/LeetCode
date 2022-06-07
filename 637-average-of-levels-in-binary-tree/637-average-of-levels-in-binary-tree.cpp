@@ -20,8 +20,8 @@ public:
         queue<TreeNode*>q;
         q.push(root);
         q.push(NULL);
-       double sum=0,count=0;
-        double x;
+        double sum=0,count=0;
+        double avg;
         while(q.size()>1)
         {
             TreeNode* curr=q.front();
@@ -30,8 +30,8 @@ public:
             {
                 q.push(NULL);
                 
-                x=sum/count;
-                ans.push_back(x);
+                avg=sum/count;
+                ans.push_back(avg);
                 count=0;
                 sum=0;
                 continue;
@@ -40,12 +40,13 @@ public:
             }
             sum+=curr->val;
             count++;
-            
-            if(curr->left!=NULL)q.push(curr->left);
-            if(curr->right!=NULL)q.push(curr->right);
+            if(curr->left!=NULL)
+                q.push(curr->left);
+            if(curr->right!=NULL)
+                q.push(curr->right);
         }
-         x=sum/count;
-        ans.push_back(x);
+        avg=sum/count;
+        ans.push_back(avg);
         return ans;
     }
 };
