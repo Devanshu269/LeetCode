@@ -6,17 +6,14 @@ public:
         int i=0, j=n-1;
         if(n == 2){
             if((numbers[i] + numbers[j]) == target){
-                ans.push_back(1);
-                ans.push_back(2);
-                return ans;
+                return vector<int>{1,2};
             }
             
         }
-        while(i<n && j>= 0){
+        while(i<j){
             int temp = target - numbers[i];
             if(numbers[j] == temp){
-                ans.push_back(i+1);
-                ans.push_back(j+1);
+                return vector<int>{i+1,j+1};
                 break;
             }
             if(temp < numbers[j])  
@@ -24,6 +21,6 @@ public:
             else
                 i++;
         }
-        return ans;
+        return vector<int>{};
     }
 };
