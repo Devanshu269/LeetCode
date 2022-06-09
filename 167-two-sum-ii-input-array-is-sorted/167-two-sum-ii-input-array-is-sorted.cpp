@@ -7,6 +7,8 @@ public:
         if(n == 2){
             if((numbers[i] + numbers[j]) == target){
                 return vector<int>{1,2};
+            }else{
+                return vector<int>{}; //target not found
             }
             
         }
@@ -14,13 +16,12 @@ public:
             int temp = target - numbers[i];
             if(numbers[j] == temp){
                 return vector<int>{i+1,j+1};
-                break;
             }
             if(temp < numbers[j])  
                 j--;
             else
                 i++;
         }
-        return vector<int>{};
+        return vector<int>{}; //target not found
     }
 };
