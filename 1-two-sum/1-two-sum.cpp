@@ -1,19 +1,26 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int temp = 0;
         int n = nums.size();
-        vector<int> ans;
+        map<int, int> mp;
         for(int i=0; i<n; i++){
-            temp = target - nums[i];
-            for(int j=i+1; j<n; j++){
-                if(temp == nums[j]){
-                    ans.push_back(i);
-                    ans.push_back(j);
-                    break;
-                }
+            if(mp.find(target-nums[i]) != mp.end()){
+                return {mp[target-nums[i]], i};
             }
+            mp[nums[i]] = i;
         }
-        return ans;
+        return {};
+        //this will work when array is sorted
+        // int i=0, j=n-1;
+        // while(i<j){
+        //     int temp = target - nums[i];
+        //     if(temp == nums[j])
+        //         return {i, j};
+        //     else if(nums[i] + nums[j] > target)
+        //         j--;
+        //     else{
+        //         i++;
+        //     }
+        // }
     }
 };
