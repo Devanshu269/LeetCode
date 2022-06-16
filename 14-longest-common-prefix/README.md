@@ -22,6 +22,6 @@
 <ul style="user-select: auto;">
 	<li style="user-select: auto;"><code style="user-select: auto;">1 &lt;= strs.length &lt;= 200</code></li>
 	<li style="user-select: auto;"><code style="user-select: auto;">0 &lt;= strs[i].length &lt;= 200</code></li>
-	<li style="user-select: auto;"><code style="user-select: auto;">strs[i]</code> consists of only lower-case English letters.</li>
+	<li style="user-select: auto;"><code style="user-select: auto;">strs[i]</code> consists of only lowercase English letters.</li>
 </ul>
 </div>
