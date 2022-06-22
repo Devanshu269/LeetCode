@@ -1,19 +1,17 @@
 class Solution {
 public:
-    // const int MAX_SIZE = 1e5;
     vector<int> graph[200001];
-
     int DFS(int src, int dest, vector<bool> &vis) {
     if (src == dest)
-        return 1;
+        return true;
     vis[src] = true;
     for (int child: graph[src]) {
         if (!vis[child]) {
             if (DFS(child, dest, vis))
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
     bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
         for (int i = 0; i < 200001; i++)
@@ -23,9 +21,6 @@ public:
             graph[edges[i][1]].push_back(edges[i][0]);
         }
         vector<bool> vis(n, false);
-        int a = DFS(source, destination, vis);
-        if(a == 1)
-            return true;
-        return false;
+        return DFS(source, destination, vis);
     }
 };
