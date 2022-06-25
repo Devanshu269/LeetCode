@@ -9,11 +9,10 @@ public:
             if(i==0){
                 if(nums[n-1]-nums[0] == 0)
                     return i;
-            }
-            // else if(i==n-1){
-            //     if(nums[i] == 0)
-            //         return i;
-            else{
+            }else if(i == n-1){
+                if(nums[n-2] == 0)
+                    return i;
+            }else{
                 if(nums[i-1] == (nums[n-1] - nums[i]))
                     return i;
             }
