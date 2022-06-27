@@ -1,16 +1,20 @@
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
-        priority_queue <int, vector<int>, greater<int> > pq;
-        int n = nums.size();
-        for(int i=0; i<n; i++){
-            pq.push(nums[i]*nums[i]);
+        vector<int> results(nums.size(),0);
+        int i=0,j=nums.size()-1,po=nums.size()-1;
+        while(i<=j){
+            if(abs(nums[i])<abs(nums[j])){
+                results[po]=nums[j]*nums[j];
+                j--;
+                po--;
+            }
+            else{
+                results[po]=nums[i]*nums[i];
+                i++;
+                po--; 
+            }
         }
-        nums.clear();
-        while(!pq.empty()){
-            nums.push_back(pq.top());
-            pq.pop();
-        }
-        return nums;
+    return results;
     }
 };
