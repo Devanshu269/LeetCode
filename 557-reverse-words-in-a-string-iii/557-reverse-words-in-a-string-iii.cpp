@@ -22,10 +22,8 @@ public:
             }
             else{
                 if(i == 0){
-                    // cout << " j before rev " << j << " i before " << i << endl;
                     ans += rev(s, i, j-1);
                     j += 1, i=j;
-                    // cout << " j after rev " << j << " i after " << i << endl;
                 }else{
                     ans = ans + ' ' + rev(s, i, j-1);
                     j += 1, i=j;
@@ -37,9 +35,6 @@ public:
                     ans += rev(s, i, j);
                 else
                     ans += ' ' + rev(s, i, j);
-                // cout << " j before rev " << j << " i before " << i << endl;
-                
-                // cout << " j after rev " << j << " i after " << i << endl;
             }
         }
         return ans;
