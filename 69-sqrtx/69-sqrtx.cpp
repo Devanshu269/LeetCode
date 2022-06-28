@@ -1,15 +1,15 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        double i=0, j=x; 
-        double ans = INT_MIN;
+        if(x < 2) return x;
+        long long i=0, j=x/2; 
+        long long ans = INT_MIN;
         while(i<=j){                             
-            double mid = round(i + (j-i)/2);
-            cout<< "mid = " << mid << endl;
-            double temp = (mid*mid);
+            long mid = round(i + (j-i)/2);
+            // cout<< "mid = " << mid << endl;
+            long temp = (mid*mid);
             if(temp == x){
-                ans = mid;
-                break;
+                return mid;
             }
             else if(temp < x){
                 if(ans < mid){
