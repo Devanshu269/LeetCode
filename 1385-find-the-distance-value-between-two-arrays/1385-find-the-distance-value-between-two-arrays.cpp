@@ -12,16 +12,12 @@ public:
             if(target <= arr2[0]){
                 if(abs(arr1[i] - arr2[0]) > d){
                     count++;
-                    flag = 1;
-                    continue;
                 }
                 flag = 1;
             }
             else if(target > arr2[m-1]){
                 if(abs(arr1[i] - arr2[m-1]) > d){
                     count++;
-                    flag = 1;
-                    continue;
                 }
                 flag = 1;
             }
