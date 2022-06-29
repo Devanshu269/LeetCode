@@ -4,7 +4,7 @@
 class Solution {
 public:
     int firstBadVersion(int n) {
-        int i = 1;
+        int i = 0;
         int j = n;
         int ans;
         while(i<j){
