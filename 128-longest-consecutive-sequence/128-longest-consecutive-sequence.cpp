@@ -8,7 +8,9 @@ public:
         }
         int ans = 0;
         for(auto it : mp){
-            if(mp.find(it-1) == mp.end()){
+            if(mp.find(it-1) != mp.end()){
+                continue;
+            }else{
                 int count=0, x = it;
                 while(mp.find(x) != mp.end()){
                     count++, x++;
